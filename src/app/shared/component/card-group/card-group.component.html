@@ -1,0 +1,6 @@
+<h3 class="font-weight-normal text-center mt-5">{{cardGroup.title}}</h3>
+<div class="card-deck">
+  <div class="card" *ngFor="let card of cardGroup.cards">
+    <app-card [data]="card"></app-card>
+  </div>
+</div>

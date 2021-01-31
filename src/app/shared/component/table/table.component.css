@@ -1,0 +1,8 @@
+.tdDelete i{
+  cursor: pointer;
+  color: red;
+}
+/*
+.tdDelete i:hover{
+  color: red;
+}*/

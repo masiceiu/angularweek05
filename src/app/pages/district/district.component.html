@@ -1,0 +1,13 @@
+<main class="container">
+  <h5 class="display-4 text-center py-4">Districts of Bangladesh: {{ getNumberOfDistricts() }}</h5>
+  <app-table [districtList]="listOfDistrict" (rowRemoveByIndex)="rowHasRemovedByIndex($event)" [theadClass]="'bg-success'"></app-table>
+  <!--
+  <div *ngIf="listOfDeletedDistrict.length>0">
+    <h5 class="display-4 text-center py-4">Deleted districts of Bangladesh: {{ getNumberOfDeletedDistricts() }}</h5>
+    <app-table [districtList]="listOfDeletedDistrict" [showActionColumn]="false" [theadClass]="'bg-danger'"></app-table>
+  </div>-->
+  <ng-container *ngIf="listOfDeletedDistrict.length>0">
+    <h5 class="display-4 text-center py-4">Deleted districts of Bangladesh: {{ getNumberOfDeletedDistricts() }}</h5>
+    <app-table [districtList]="listOfDeletedDistrict" [showActionColumn]="false" [theadClass]="'bg-danger'"></app-table>
+  </ng-container>
+</main>

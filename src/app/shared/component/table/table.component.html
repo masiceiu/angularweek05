@@ -1,0 +1,30 @@
+<div class="table-responsive">
+  <table class="table table-bordered table-hover table-striped">
+    <thead class="{{theadClass}}">
+    <tr>
+      <th *ngIf="showActionColumn"></th>
+      <th>SL</th>
+      <th>Name</th>
+      <th>Division</th>
+      <th>Population</th>
+      <th>Area(Sqr.km)</th>
+      <th>Density(Sqr.km)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let it of districtList; index as sl" >
+      <!--
+      <td class="text-center">
+            <i (click)="deleteRow(sl)" class="fa fa-trash"></i>
+      </td>-->
+      <td *ngIf="showActionColumn" class="tdDelete text-center"><i class="fas fa-minus-circle" (click)="deleteRowByIndex(sl)"></i></td>
+      <td>{{sl+1}}</td>
+      <td>{{it.name}}</td>
+      <td>{{it.division}}</td>
+      <td>{{it.population | bdLocal }}</td>
+      <td>{{it.areaSqKm }}</td>
+      <td>{{it.density }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
